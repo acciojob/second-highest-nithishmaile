@@ -10,6 +10,30 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			let maximumNum=arr[0]
+			for(let num of arr){
+				if(num >maximumNum){
+					maximumNum=num
+				}
+			}
+
+			let removeMaximumNum=arr.filter(num=>maximumNum!=num)
+
+      console.log(removeMaximumNum)
+
+			
+			if(removeMaximumNum.length==1 || removeMaximumNum.length==0){
+				return Infinity
+			}else{
+				let maX=removeMaximumNum[0]
+				for(let num of removeMaximumNum){
+					if(num>maX){
+						maX=num
+					}
+				}
+				return maX
+			}
+			
 			
 		}
 
@@ -21,7 +45,7 @@
 			}
 			alert(secondHighest(arr));
 		}
-		Main();
+		Main(); 
 	</script>
 
     <script type="text/javascript" src="./script.js">
